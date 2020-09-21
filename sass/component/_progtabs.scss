@@ -1,0 +1,108 @@
+.progtabs {
+    display: none;
+
+    &__nav {
+        // width: 100%;
+        width: 100%;
+        display: inline-block;
+        margin: 0px auto;
+
+        @include min-responsive($mntablet) {}
+    }
+
+    &__links {
+        // display: flex;
+        // justify-content: center;
+        // flex-wrap: wrap;
+        position: relative;
+        display: none;
+
+        @include min-responsive($mntablet) {
+            display: block;
+            // position: absolute;
+            // top: -1rem;
+            // left: 50%;
+            // transform: translateX(-50%);
+            // margin-bottom: 30px;
+            width: 100%;
+
+        }
+
+        &:after {
+            display: block;
+            clear: both;
+            content: '';
+        }
+
+        .slick-track {
+            @include min-responsive($mntablet){
+                left: 22.5%;
+            }
+            @include min-responsive($mxtablet){
+                left: 25%;
+            }
+        }
+
+        li {
+            margin: 0px 15px;
+            float: left;
+            list-style: none;
+            padding: 5px 25px;
+            font-size: 14px;
+            cursor: pointer;
+
+            &.slick-current {
+                border: 2px solid;
+                border-radius: 40px;
+                color: $cl_black;
+                background: $cl_white;
+                font-family: $font_body_bold;
+            }
+
+        }
+
+        a {
+            padding: 5px 25px;
+            display: inline-block;
+            border-radius: 3px 3px 0px 0px;
+            font-size: 14px;
+            font-weight: 600;
+            color: $cl_white;
+            transition: all linear 0.15s;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__item {
+        // width: 1070px;
+        // width: 100%!important;
+    }
+
+    &__content {
+        padding: 5px 0;
+        border-radius: 3px;
+        // box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+        color: white;
+        
+        @include min-responsive($mntablet) {
+            margin-top: 0rem;
+            padding: 15px 0;
+        }
+
+        .slick-track {}
+
+        .slick-slide {
+            // max-width: 1070px;
+        }
+        .slick-list{
+            // min-height: 430px;
+        }
+    }
+
+    &.active {
+        display: block;
+    }
+}

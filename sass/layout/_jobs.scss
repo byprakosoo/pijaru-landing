@@ -1,0 +1,78 @@
+.jobs {
+    &__title{
+        font-size: 18px;
+    }
+    &__desc{
+        text-align: center;
+        font-size: 18px;
+        line-height: 1.5;
+        margin-top: 50px;
+    }
+    &__list{
+        margin: 0 -20px;
+        justify-content: center;
+        &--intern{
+            .jobs__button{
+                color: $cl_white;
+                border: 2px solid $cl_orange;
+                &::after{
+                    background: $cl_orange;
+                }
+                &:hover {
+                    color: $cl_orange;
+                }
+            }
+        }
+    }
+    &__item{
+        padding: 0 20px;
+        margin: 20px 0;
+    }
+    &__button {
+        color: $cl_white;
+        border: 2px solid $cl_black;
+        position: relative;
+        z-index: 1;
+        transition-delay: 0.3s !important;
+        overflow: hidden;
+        text-align: center;
+        padding: 20px 10px;
+        height: 110px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: -1;
+            bottom: 0;
+            background: $cl_black;
+            width: calc(100% + 10px);
+            height: 300%;
+            left: -10px;
+            transition: height 0.5s ease-in-out;
+        }
+
+        &:hover {
+            color: $cl_black;
+            &::after {
+                content: "";
+                height: 0;
+            }
+        }
+    }
+    &__text{
+        width: 80%;
+        margin: 5px auto;
+        text-transform: uppercase;
+    }
+    &__name{
+        font-family: $font_body_bold;
+        font-size: 16px;
+    }
+    &__category{
+        font-family: $font_body_bold;
+        font-size: 16px;
+    }
+}

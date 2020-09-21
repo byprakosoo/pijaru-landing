@@ -1,0 +1,88 @@
+/*----- Tabs -----*/
+.pjtabs {
+    display: none;
+
+    &__nav {
+        width: 100%;
+        display: inline-block;
+        margin: 85px auto;
+        @include min-responsive($mntablet){
+            margin: 100px auto;
+        }
+    }
+
+    &__links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+        margin: 20px 0;
+        @include min-responsive($mntablet){
+            position: absolute;
+            top: 10rem;
+            left: 45%;
+            transform: translateX(-40%);
+            margin: 0;
+            margin-bottom: 30px;
+        }
+        @include min-responsive($mxtablet){
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &:after {
+            display: block;
+            clear: both;
+            content: '';
+        }
+
+        li {
+            
+            float: left;
+            list-style: none;
+            width: 50%;
+            text-align: center;
+            @include min-responsive($mntablet){
+                width: auto;
+                text-align: left;
+                margin: 0px 5px;
+            }
+            &.active {
+                 a{
+                    border: 2px solid $cl_white;
+                border-radius: 40px;
+                }
+            }
+
+        }
+
+        a {
+            padding: 3px 35px;
+            display: inline-block;
+            border-radius: 3px 3px 0px 0px;
+            font-size: 14px;
+            font-weight: 600;
+            color: $cl_white;
+            transition: all linear 0.15s;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__content {
+        padding: 15px 0;
+        border-radius: 3px;
+        box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+        color: white;
+        @include min-responsive($mntablet){
+            margin-top: 8rem;
+        }
+        @include min-responsive($mxtablet){
+            margin-top: 5rem;
+        }
+    }
+
+    &.active {
+        display: block;
+    }
+}

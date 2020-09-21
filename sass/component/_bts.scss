@@ -1,0 +1,41 @@
+$gap: 10px;
+.bts{
+    &__intro{
+        font-family: $font_body_bold;
+        font-size: 16px;
+        text-align: center;
+        position: relative;
+        padding: 10px 0;
+        margin: 20px 0;
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 40px;
+            height: 2px;
+            background: $cl_white;
+            transform: translateX(-50%);
+        }
+    }
+    &__list{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__item{
+        margin: 5px;
+        @include min-responsive($mntablet){
+            height: 305px;
+            flex: 0 0 calc(33.333% - #{$gap});
+            &:first-child{
+                flex: 0 0 calc(100% - #{$gap});
+            }
+            &:nth-child(2), &:nth-child(3){
+                flex: 0 0 calc(50% - #{$gap});
+            }
+            &:nth-child(4){
+                flex: 0 0 calc(100% - #{$gap});
+            }
+        }
+    }
+}

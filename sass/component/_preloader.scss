@@ -1,0 +1,19 @@
+.preloader {
+	background: $cl_orange;
+	height: 100%;
+	width: 100%;
+	z-index: 11;
+	position: fixed;
+	// animation: backdrop 1s infinite;
+	&__wrap {
+		img {
+			width: 75px;
+			@include min-responsive($mdtablet) {
+				width: 150px;
+			}
+		}
+		object{
+			width: 150px;
+		}
+	}
+}

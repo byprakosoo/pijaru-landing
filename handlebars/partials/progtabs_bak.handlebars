@@ -1,0 +1,61 @@
+<div class="progtabs">
+    <div class="container clearfix">
+        <div class="progtabs__nav">
+            <ul class="progtabs__links">
+                <li class="active"><a href="#progtab1">Web Series</a></li>
+                <li><a href="#progtab2">Sketches</a></li>
+                <li><a href="#progtab3">Short Films</a></li>
+                <li><a href="#progtab4">Motion Graphics</a></li>
+            </ul>
+
+            <div class="progtabs__content">
+                <div id="progtab1" class="progtabs active">
+                    {{>webseries}}
+                </div>
+
+                <div id="progtab2" class="progtabs">
+                    {{>shortfilms}}
+                </div>
+
+                <div id="progtab3" class="progtabs">
+                    {{>sketches}}
+                </div>
+
+                <div id="progtab4" class="progtabs">
+                    {{>motiongraphics}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="progtabs">
+    <div class="container clearfix">
+        <div class="progtabs__nav">
+            <ul class="progtabs__links slider-nav">
+                <li class="active">Web Series</li>
+                <li>Sketches</li>
+                <li>Short Films</li>
+                <li>Motion Graphics</li>
+            </ul>
+
+            <ul class="progtabs__content slider-for">
+                <li id="progtab1" class="progtabs__item">
+                    {{>webseries}}
+                </li>
+
+                <li id="progtab2" class="progtabs__item">
+                    {{>shortfilms}}
+                </li>
+
+                <li id="progtab3" class="progtabs__item">
+                    {{>sketches}}
+                </li>
+
+                <li id="progtab4" class="progtabs__item">
+                    {{>motiongraphics}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

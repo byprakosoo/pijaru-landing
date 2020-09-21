@@ -1,0 +1,169 @@
+$gap: 10px;
+
+.portofolio {
+    display: block;
+    width: 100%;
+    position: relative;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        position: relative;
+        width: 100%;
+        margin: 0 5px 10px;
+        // padding: 0 3px;
+        overflow: hidden;
+        height: 160px;
+        cursor: pointer;
+        @include min-responsive($mntablet) {
+            flex: 0 0 calc(50% - #{$gap});
+            height: auto;
+            .portofolio__overlay{
+                opacity: 1;
+            }
+        }
+        @include min-responsive($mxtablet) {
+            flex: 0 0 calc(50% - #{$gap});
+            height: 300px;
+            .portofolio__overlay{
+                opacity: 0;
+            }
+            &:hover{
+                .portofolio__overlay{
+                    opacity: 1;
+                }
+                picture{
+                    img{
+                        transform: scale(1.2);
+                    }
+                    &::after{
+                        background: rgba(35, 31, 32, .8);
+                    }
+                }
+                .portofolio__title{
+                    transform: translateY(-5px);
+                }
+                .portofolio__category{
+                    transform: translateY(5px);
+                }
+            }
+            &:first-child {
+                flex: 0 0 calc(100% - #{$gap});
+                height: 300px;
+            }
+            &:nth-child(3n + 4) {
+                flex: 0 0 calc(100% - #{$gap});
+                height: 300px;
+            }
+        }
+        picture {
+            width: 100%;
+            position: relative;
+            img{
+                transition: 2s ease-in-out;
+                transform: scale(1);
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 300px;
+                top:0;
+                left: 0;
+                background: rgba(35, 31, 32, .6);
+                transition: 2s ease-in-out;
+            }
+            @include min-responsive($mxtablet) {
+                width: auto;
+                &::after{
+                    background: rgba(35, 31, 32, 0);
+                }
+            }
+        }
+    }
+
+    &__overlay {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 1;
+        transition: all 1s ease-in-out;
+        text-align: center;
+    }
+    &__title{
+        font-family: $font_body_bold;
+        font-size: 1em;
+        margin: 0;
+        transition: all .5s ease-in-out;
+    }
+    &__category{
+        font-family: $font_body;
+        font-size: 1em;
+        margin: 0;
+        transition: all .5s ease-in-out;
+    }
+    &__read{
+        background: $cl_black;
+        padding-top: 3rem;
+        color: $cl_white;
+        @include min-responsive($mntablet) {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+        &--ads{
+            background: $cl_yellow;
+            color: $cl_black;
+            .slick-arrow{
+            color: $cl_black !important;
+        }
+            .slick-dots li button{
+                background: $cl_black !important ;
+            }
+            .slick-dots li.slick-active button{
+                background: $cl_yellow  !important;
+                border: 1px solid $cl_black !important;
+            }
+            .bts__intro::after{
+                background: $cl_black;
+            }
+            .portofolio__big::after{
+                background: $cl_black;
+            }
+        }
+    }
+    
+    &__container{
+        text-align: center;
+    }
+    &__name{
+        font-family: $font_body_bold;
+        font-size: 22px;
+        position: relative;
+        margin: 5px 0;
+    }
+    &__big{
+        position: relative;
+        padding: 10px 0;
+        
+    }
+    &__cat{
+        display: block;
+        margin-bottom: 35px;
+    }
+    &__desc{
+        line-height: 1.5;
+        @include min-responsive($mntablet){
+            width: 65%;
+            margin: 0 auto;
+        }
+    }
+}

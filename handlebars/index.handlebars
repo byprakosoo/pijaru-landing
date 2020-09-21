@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>head}}
+
+<body>
+    {{>preloader}}
+    {{>header page="index"}}
+    <div class="overflow clearfix">
+        <div class="fullpage" id="fullpage">
+            {{>cover-index}}
+            <!-- Index Content -->
+            <div class="section content section__works" id="our-works">
+                <div class="content__wrapper">
+                    {{>pjtabs}}
+                </div>
+            </div>
+            <!-- Index Content -->
+        </div>
+    </div>
+    {{>footer}}
+    {{>script page="index"}}
+</body>
+
+</html>
