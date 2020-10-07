@@ -1,9 +1,4 @@
 # PR
 
-test pull request nih
+Landing Page for pijaru.com(https://www.pijaru.com/) using handlebars.
 
-## God Code:
-
-```javascript
-console.log('Hello World')
-```
